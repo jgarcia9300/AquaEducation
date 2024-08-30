@@ -7,11 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vercel --prod",
+    "login": "vercel login"
   },
   "dependencies": {
+    "aqua-education": "file:",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "vercel": "^37.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
