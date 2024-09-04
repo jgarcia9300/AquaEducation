@@ -1,4 +1,4 @@
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase.config"; 
 
 const provider = new GoogleAuthProvider(); // Se crea la instancia de GoogleAuthProvider que se usará para el inicio de sesión con Google
@@ -28,8 +28,18 @@ logout: async() => {
         console.log(error);
     });
 
-    obserevAuthState = () => {}
-}
-)
+    //la función observeAuthState se encarga de observar el estado de autenticación del usuario, lo que permite saber si el usuario está autenticado o no
+    obserevAuthState = () => {
+        set({loading:true}); // Se establece la variable loading en true, lo que indica que se está cargando la información del usuario
+        onAuthStateChanged(auth, (user) => {
+            if (user) { // Si el usuario está autenticado se establece el usuario en el store lo que indica que el usuario está autenticado
+                set({user, loading:false});
+            } else { // Si el usuario no está autenticado se establece el usuario en null lo que indica que el usuario no está autenticado 
+                set({user:null, loading:false});
+            }
+        })
+    }
+}}
+))
 
 
