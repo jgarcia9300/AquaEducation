@@ -12,9 +12,13 @@
     "login": "vercel login"
   },
   "dependencies": {
+    "@react-three/drei": "^9.111.5",
+    "@react-three/fiber": "^8.17.6",
+    "@types/three": "^0.168.0",
     "aqua-education": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "three": "^0.168.0",
     "vercel": "^37.2.1"
   },
   "devDependencies": {
