@@ -7,14 +7,21 @@ import Torus from "../Torus/Torus";
 const World = () => {
   const cameraSettings = {
     position: [2, 0, 5],
-    fov: 75,
+    fov: 120,
   };
   return (
     <Canvas camera={cameraSettings}>
-      <MapControls/>
-      <ambientLight intensity={1.5}/>
-      <directionalLight position={[0, 10, 10]} intensity={5} />
-      <Torus/>
+      <MapControls
+        enableDamping={true}
+        dampingFactor={0.4}
+        screenSpacePanning={false}
+        minDistance={9}
+        maxDistance={15}
+        
+      />
+      <ambientLight intensity={1.5} />
+      <directionalLight position={[3, 10, 10]} intensity={5} />
+      <Torus />
     </Canvas>
   );
 };
