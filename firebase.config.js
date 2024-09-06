@@ -1,4 +1,5 @@
 import { getAuth } from "firebase/auth"; // Firebase v9
+import { getFirestore } from "firebase/firestore";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -19,3 +20,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app); // Se crea la instancia de autenticación
+
+//Initialize Firestore and create a reference to the service
+
+export const db = getFirestore(app); // Se crea la instancia de Firestore
