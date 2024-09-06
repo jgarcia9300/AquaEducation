@@ -20,11 +20,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "three": "^0.168.0",
-<<<<<<< HEAD
     "zustand": "^4.5.5"
-=======
-    "vercel": "^37.2.1"
->>>>>>> 9d811e01f103929ae97c51ee5982888a88b4ea12
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
