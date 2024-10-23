@@ -3,6 +3,7 @@ import "./Login.css";
 import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from 'react-router-dom';
 import { div } from 'three/webgpu';
+import logo from '../../static/images/logo.jpg'
 
 const Login = () => {
 const { user, loginGoogleWithPopUp, logout, observeAuthState, loading } = useAuthStore();
@@ -67,7 +68,7 @@ const navigate = useNavigate();
         <form className="flex flex-col w-full h-full pb-6 text-center bg-white rounded-3xl border pl-64 pr-64">
         <img 
           className="w-36 mx-auto"
-          src="../../src/assets/images/logo.jpg"
+          src={logo}
           alt="imagen-logo"
         />
           <h3 className="mb-3 text-4xl font-extrabold text-blue-300">Aqua Education</h3>
