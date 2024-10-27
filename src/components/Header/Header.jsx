@@ -56,7 +56,7 @@ const Header = () => {
           </li>
           <li className="header__nav__ul__li">
             <NavLink
-              to="/problemas-ambientales"
+              to="/problemas-ambientales/contaminacion-del-agua"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               PROBLEMAS AMBIENTALES
