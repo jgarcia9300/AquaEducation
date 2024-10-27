@@ -7,19 +7,12 @@ html,
 body,
 #root {
   font-family: 'Poppins', sans-serif;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(179, 170, 170);
+  margin: 0;
+  overflow: auto; 
 }
 
 canvas {
   touch-action: none;
-}
-.title {
-  position: absolute;
-  z-index: 1;
-  color: white;
 }
