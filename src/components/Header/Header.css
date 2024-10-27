@@ -33,6 +33,7 @@
 
 .header__nav__ul__dropdown {
   position: absolute;
+  z-index: 2;
   background-color: #ffffff;
   font-size: 16px;
   padding: 8px;
@@ -90,6 +91,5 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 30%;
   margin-right: 50px;
 }
