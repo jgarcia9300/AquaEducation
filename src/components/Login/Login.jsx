@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import "./Login.css";
 import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from 'react-router-dom';
@@ -21,7 +21,7 @@ const navigate = useNavigate();
          name: user.displayName,
          photo: user.photoURL
        };
-       navigate("/World")
+       navigate("/Home")
       }
      }, [user]);
  

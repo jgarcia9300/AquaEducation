@@ -1,0 +1,23 @@
+.btn{
+  border-radius: 10px;
+  padding: 5px 8px;
+  margin: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #0EA2E9;
+}
+.btn-primary:hover {
+  font-weight: 600;
+}
+
+.btn-secondary {
+  border: 1px solid #000000;
+}
+
+.btn-secondary:hover {
+  font-weight: 600;
+}
