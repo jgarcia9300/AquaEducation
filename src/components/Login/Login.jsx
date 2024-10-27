@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import "./Login.css";
 import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from 'react-router-dom';
 import { div } from 'three/webgpu';
+import logo from '../../static/images/logo.jpg'
 
 const Login = () => {
 const { user, loginGoogleWithPopUp, logout, observeAuthState, loading } = useAuthStore();
@@ -20,7 +21,7 @@ const navigate = useNavigate();
          name: user.displayName,
          photo: user.photoURL
        };
-       navigate("/World")
+       navigate("/Home")
       }
      }, [user]);
  
@@ -59,16 +60,22 @@ const navigate = useNavigate();
        ) : (
 
     
-<div className="bg-white rounded-lg py-5">
-<div className="container flex flex-col mx-auto bg-white rounded-lg pt-12 my-5">
+<div className="bg-white rounded-lg py-auto">
+<div className="container flex flex-col mx-auto bg-white rounded-lg my-auto">
   <div className="flex justify-center w-full h-full my-auto xl:gap-14 lg:justify-normal md:gap-5 draggable">
-    <div className="flex items-center justify-center w-full lg:p-12">
-      <div className="flex items-center xl:p-10">
-        <form className="flex flex-col w-full h-full pb-6 text-center bg-white rounded-3xl">
-          <h3 className="mb-3 text-4xl font-extrabold text-dark-grey-900">Sign In</h3>
+    <div className="flex items-center justify-center w-full lg:p-2 h-100">
+      <div className="flex items-center">
+        <form className="flex flex-col w-full h-full pb-6 text-center bg-white rounded-3xl border pl-64 pr-64">
+        <img 
+          className="w-36 mx-auto"
+          src={logo}
+          alt="imagen-logo"
+        />
+          <h3 className="mb-3 text-4xl font-extrabold text-blue-300">Aqua Education</h3>
+          <h3 className="mb-3 text-3xl font-extrabold text-blue-300">Sign In</h3>
           <p className="mb-4 text-grey-700">Enter your email and password</p>
           <button type='submit' onClick={handleLogin}
-            className="flex items-center justify-center w-full py-4 mb-6 text-sm font-medium transition duration-300 rounded-2xl text-grey-900 bg-grey-300 hover:bg-grey-400 focus:ring-4 focus:ring-grey-300"
+           className="flex items-center justify-center w-full py-4 mb-6 text-sm font-medium transition duration-300 rounded-2xl text-gray-900 bg-gray-300 hover:bg-blue-400 focus:ring-4 focus:ring-gray-300"
             href="#"
           >
             <img
@@ -79,27 +86,27 @@ const navigate = useNavigate();
             Sign in with Google
           </button>
           <div className="flex items-center mb-3">
-            <hr className="h-0 border-b border-solid border-grey-500 grow" />
-            <p className="mx-4 text-grey-600">or</p>
-            <hr className="h-0 border-b border-solid border-grey-500 grow" />
+            <hr className="h-0 border-b border-solid border-gray-500 grow" />
+            <p className="mx-4 text-gray-600">or</p>
+            <hr className="h-0 border-b border-solid border-gray-500 grow" />
           </div>
-          <label htmlFor="email" className="mb-2 text-sm text-start text-grey-900">
+          <label htmlFor="email" className="mb-2 text-sm text-start text-gray-900">
             Email*
           </label>
           <input
             id="email"
             type="email"
             placeholder="mail@loopple.com"
-            className="flex items-center w-full px-5 py-4 mr-2 text-sm font-medium outline-none focus:bg-grey-400 mb-7 placeholder:text-grey-700 bg-grey-200 text-dark-grey-900 rounded-2xl"
+            className="flex items-center w-full px-5 py-4 mr-2 text-sm font-medium outline-none focus:bg-blue-100 mb-7 placeholder:text-gray-700 bg-gray-200 text-gray-900 rounded-2xl"
           />
-          <label htmlFor="password" className="mb-2 text-sm text-start text-grey-900">
+          <label htmlFor="password" className="mb-2 text-sm text-start text-gray-900">
             Password*
           </label>
           <input
             id="password"
             type="password"
             placeholder="Enter a password"
-            className="flex items-center w-full px-5 py-4 mb-5 mr-2 text-sm font-medium outline-none focus:bg-grey-400 placeholder:text-grey-700 bg-grey-200 text-dark-grey-900 rounded-2xl"
+            className="flex items-center w-full px-5 py-4 mb-5 mr-2 text-sm font-medium outline-none focus:bg-blue-100 placeholder:text-gray-700 bg-gray-200 text-gray-900 rounded-2xl"
           />
           <div className="flex flex-row justify-between mb-8">
             <label className="relative inline-flex items-center mr-3 cursor-pointer select-none">
@@ -110,14 +117,14 @@ const navigate = useNavigate();
                   alt="tick"
                 />
               </div>
-              <span className="ml-3 text-sm font-normal text-grey-900">Keep me logged in</span>
+              <span className="ml-3 text-sm font-normal text-gray-900">Keep me logged in</span>
             </label>
-            <a href="#" className="mr-4 text-sm font-medium text-purple-blue-500">
+            <a href="#" className="mr-4 text-sm font-medium text-gray-900">
               Forget password?
             </a>
           </div>
           <button
-            className="w-full px-6 py-5 mb-5 text-sm font-bold leading-none text-white transition duration-300 md:w-96 rounded-2xl hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 bg-purple-blue-500"
+              className="flex items-center justify-center w-full py-4 mb-6 text-sm font-medium transition duration-300 rounded-2xl text-gray-900 bg-gray-300 hover:bg-amber-400 focus:ring-4 focus:ring-gray-300"
           >
             Sign In
           </button>
