@@ -28,7 +28,11 @@ const router = createBrowserRouter([
       {
         path: "/problemas-ambientales/contaminacion-del-agua",
         element: <ProblemaContaminacion />,
-      }
+      },
+      {
+        path: "*",  // Esto manejará las rutas no encontradas
+        element: <h1>404 - Página no encontrada</h1>,
+      },
     ],
   },
 ]);
