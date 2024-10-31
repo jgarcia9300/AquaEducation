@@ -48,7 +48,7 @@ const Header = () => {
         <ul className="header__nav__ul">
           <li className="header__nav__ul__li">
             <NavLink
-              to="/home"
+              to="/Home"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               HOME
