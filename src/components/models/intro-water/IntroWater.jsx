@@ -1,5 +1,12 @@
 import { useRef, useEffect, useState, useCallback } from "react";
-import { useGLTF, OrbitControls, Text, Plane, Sky, Loader } from "@react-three/drei";
+import {
+  useGLTF,
+  OrbitControls,
+  Text,
+  Plane,
+  Sky,
+  Loader,
+} from "@react-three/drei";
 import { Texto3D } from "../text3d/Texto3D";
 import { useFrame, useThree } from "@react-three/fiber";
 import { AnimationMixer } from "three";
@@ -12,10 +19,10 @@ const IntroWater = () => {
   const mixer = useRef(new AnimationMixer(scene));
   const { camera, gl } = useThree();
   const controlsRef = useRef();
-  const groupRef = useRef(); 
+  const groupRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
-  const [clickedOnce, setClickedOnce] = useState(false); 
-  const [buttonState, setButtonState] = useState('VEAMOS');
+  const [clickedOnce, setClickedOnce] = useState(false);
+  const [buttonState, setButtonState] = useState("VEAMOS");
 
   useEffect(() => {
     if (animations && animations.length) {
@@ -42,7 +49,11 @@ const IntroWater = () => {
       },
       onComplete: () => {
         setIsVisible(true);
-        gsap.fromTo(groupRef.current.position, { y: -5 }, { y: -5, duration: 1 });
+        gsap.fromTo(
+          groupRef.current.position,
+          { y: -5 },
+          { y: -5, duration: 1 }
+        );
         gsap.fromTo(
           groupRef.current.children[0].material,
           { opacity: 0 },
@@ -61,9 +72,9 @@ const IntroWater = () => {
     if (!clickedOnce) {
       animateCameraAndShowContent();
       setClickedOnce(true);
-      setButtonState('IR A EXPLORAR');
+      setButtonState("IR A EXPLORAR");
     } else {
-      window.location.href = "/exploracion/contaminacion-del-agua"; 
+      window.location.href = "/exploracion/contaminacion-del-agua";
     }
   }, [clickedOnce]);
 
@@ -72,12 +83,12 @@ const IntroWater = () => {
       <Loader />
       <Sky
         sunPosition={[0, 1, -5]}
-        inclination={0.2} 
+        inclination={0.2}
         azimuth={180}
-        mieCoefficient={0.005} 
+        mieCoefficient={0.005}
         mieDirectionalG={0.07}
         rayleigh={1}
-        turbidity={2} 
+        turbidity={2}
       />
       <ambientLight intensity={0.5} />
       <directionalLight position={[0, 3, 7]} intensity={1} castShadow />
@@ -85,7 +96,6 @@ const IntroWater = () => {
       <OrbitControls
         ref={controlsRef}
         args={[camera, gl.domElement]}
-        enableZoom={false}
         enablePan={false}
         minPolarAngle={Math.PI / 4}
         maxPolarAngle={Math.PI / 1.5}
@@ -93,12 +103,9 @@ const IntroWater = () => {
         maxAzimuthAngle={Math.PI / 4}
       />
       <Texto3D text={`CONTAMINACIÓN \n       DEL AGUA`} />
-      <Button3D
-        text={buttonState}
-        onClick={handleClick}
-      />
+      <Button3D text={buttonState} onClick={handleClick} />
       <group ref={groupRef} visible={isVisible}>
-        <Plane args={[20, 5]} position={[0, 0, -0.1]}>
+        <Plane args={[20, 8]} position={[0, -1.5, -0.1]}>
           <meshStandardMaterial
             attach="material"
             color="white"
@@ -107,20 +114,23 @@ const IntroWater = () => {
           />
         </Plane>
         <Text
-          position={[0, 0, 0]}
+          position={[0, -1.5, 0]}
           font="/public/fonts/Poppins-Light.otf"
           fontSize={0.5}
           color="black"
           anchorX="center"
           anchorY="middle"
-          textAlign="center"
+          textAlign="justify"
           maxWidth={16}
           opacity={0}
         >
-          Lorem ipsum dolor sit amet consectetur. Sed tortor ut dui nec
-          phasellus ultricies enim nibh id. Adipiscing lorem enim enim risus in
-          sed donec vulputate quis. Quis massa sed nulla cursus tempor amet.
-          Urna netus sed consectetur dignissim facilisis suspendisse.
+          La contaminación del agua es un grave problema ambiental que ocurre
+          cuando sustancias nocivas, como productos químicos y desechos
+          industriales, ingresan a cuerpos de agua. Este fenómeno no solo afecta
+          la calidad del agua, sino que también pone en riesgo la salud de los
+          ecosistemas acuáticos y de las comunidades que dependen de ellos.
+          Abordar la contaminación del agua es crucial para proteger nuestros
+          recursos hídricos y garantizar un ambiente saludable para todos.
           <meshStandardMaterial attach="material" color="white" />
         </Text>
       </group>
