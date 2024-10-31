@@ -1,18 +1,17 @@
-import Button from "../../../components/Button/Button"
-import "./ProblemaContaminacion.css"
+// src/pages/ProblemaContaminacion.js
+import { Canvas } from '@react-three/fiber';
+import { Loader } from '@react-three/drei';
+import IntroWater from '../../../components/models/intro-water/IntroWater';
+import './ProblemaContaminacion.css';
 
 const ProblemaContaminacion = () => {
   return (
     <main className="problema-contaminacion">
-      <header className="problema-contaminacion__header">
-        <h1 className="problema-contaminacion__title">CONTAMINACIÓN DEL AGUA</h1>
-      </header>
-      <section className="problema-contaminacion__section">
-        <p>Contenido de la contaminacion</p>
-        <Button text="Exploremos el problema" />
-      </section>
+      <Canvas camera={{ position: [0, 2, 12] }} className="canvas-background">
+        <IntroWater />
+      </Canvas>
     </main>
-  )
-}
+  );
+};
 
-export default ProblemaContaminacion
+export default ProblemaContaminacion;
