@@ -6,6 +6,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from './components/Layout/Layout.jsx'
 import Login from './components/Login/Login.jsx'
 import Home from './pages/Home/Home.jsx'
+import EscazesDelAgua from './pages/escasez-agua/EscazesDelAgua.jsx'
+
+
 
 const router = createBrowserRouter([
   {
@@ -18,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/Home",
         element: <Home />,
+      },
+      {
+        path: "problemas-ambientales/escasez-del-agua",
+        element: <EscazesDelAgua/>,
       },
     ],
   },
