@@ -12,7 +12,7 @@ const EscazesDelAgua = () => {
 
   return (
     // <KeyboardControls map={map}>
-      <Canvas camera={cameraSettings}>
+      <Canvas camera={cameraSettings} shadows>
         <Controls />
         <Lights />
         <Desierto />
