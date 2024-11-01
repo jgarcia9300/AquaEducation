@@ -61,13 +61,13 @@ const AcidificationIntroduction = () => {
 
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
       <Canvas
         shadows
         camera={{ position: [0, -10, 19], fov: 80 }}
         className="canvas-background"
       >
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
           <Controls />
           <Lights />
           <IntroModels />
