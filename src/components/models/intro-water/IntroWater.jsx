@@ -41,7 +41,7 @@ const IntroWater = () => {
 
   const animateCameraAndShowContent = () => {
     gsap.to(camera.position, {
-      y: camera.position.y - 10,
+      y: camera.position.y - 20,
       duration: 1,
       ease: "power1.out",
       onUpdate: () => {
@@ -101,6 +101,7 @@ const IntroWater = () => {
         maxPolarAngle={Math.PI / 1.5}
         minAzimuthAngle={-Math.PI / 4}
         maxAzimuthAngle={Math.PI / 4}
+        maxDistance={20}
       />
       <Texto3D text={`CONTAMINACIÓN \n       DEL AGUA`} />
       <Button3D text={buttonState} onClick={handleClick} />
