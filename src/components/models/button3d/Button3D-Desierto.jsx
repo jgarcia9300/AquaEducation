@@ -7,7 +7,7 @@ export const Button3D = ({text, onClick}) => {
   return (
     <group position={[0, 7, 1]}>
       <Box
-        args={[5, 1, 0.5]} // Tamaño del botón
+        args={[6, 1, 0.5]} // Tamaño del botón
         onClick={onClick} // Llama a la función al hacer clic
         onPointerOver={(e) => {
           e.stopPropagation();

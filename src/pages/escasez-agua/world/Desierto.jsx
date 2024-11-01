@@ -7,6 +7,7 @@ import {useGLTF,
 import { Texto3D } from "../../../components/models/text3d/Texto3D-Desierto";
 import { Button3D } from "../../../components/models/button3d/Button3D-Desierto";
 
+
 const Desierto = (props) => {
   const group = useRef();
   const groupRef = useRef();

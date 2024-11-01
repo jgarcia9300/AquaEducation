@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         element: <ProblemaContaminacion />,
       },
       {
+        path: "/problemas-ambientales/escasez-del-agua",
+        element: <EscazesDelAgua/>,
+      },
+      {
         path: "/problemas-ambientales/acidificacion-de-los-oceanos",
         element: <AcidificationIntroduction />,
       },
