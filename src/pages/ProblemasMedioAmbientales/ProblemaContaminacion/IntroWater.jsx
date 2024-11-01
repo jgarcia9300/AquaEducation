@@ -1,36 +1,43 @@
+/* eslint-disable react/no-unknown-property */
 import { useRef, useEffect, useState, useCallback } from "react";
-import {
-  useGLTF,
-  OrbitControls,
-  Text,
-  Plane,
-  Sky
-} from "@react-three/drei";
-import { Texto3D } from "../text3d/Texto3D";
+import { useGLTF, OrbitControls, Text, Plane, Sky } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { AnimationMixer } from "three";
+import Button3D from "../../../components/models/button3d/Button3D";
+import { Texto3D } from "../../../components/models/text3d/Texto3D";
 import * as THREE from "three";
-import { Button3D } from "../button3d/Button3D";
 import gsap from "gsap";
 
+
+/**
+ * IntroWater component.
+ *
+ * This component renders a scene with a water animation and a message about
+ * water pollution. It also includes a button that when clicked changes the
+ * camera position and shows the message.
+ *
+ * @return {JSX.Element} The JSX element representing the component.
+ */
 const IntroWater = () => {
   const { scene, animations } = useGLTF("/models-3d/WaterAnimation.glb");
-  const mixer = useRef(new AnimationMixer(scene));
+  const [buttonState, setButtonState] = useState("VEAMOS");
+  const [clickedOnce, setClickedOnce] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const { camera, gl } = useThree();
+  const mixer = useRef(new AnimationMixer(scene));
   const controlsRef = useRef();
   const groupRef = useRef();
-  const [isVisible, setIsVisible] = useState(false);
-  const [clickedOnce, setClickedOnce] = useState(false);
-  const [buttonState, setButtonState] = useState("VEAMOS");
+
 
   useEffect(() => {
-    if (animations && animations.length) {
-      const action = mixer.current.clipAction(animations[0]);
+    const currentMixer = mixer.current;
+    if (animations?.length) {
+      const action = currentMixer.clipAction(animations[0]);
       action.setLoop(THREE.LoopRepeat, Infinity);
       action.play();
     }
     return () => {
-      mixer.current.stopAllAction();
+      currentMixer.stopAllAction();
     };
   }, [animations, scene]);
 
@@ -102,7 +109,16 @@ const IntroWater = () => {
         maxDistance={20}
       />
       <Texto3D text={`CONTAMINACIÓN \n       DEL AGUA`} />
-      <Button3D text={buttonState} onClick={handleClick} />
+      <Button3D
+        text={buttonState}
+        onClick={handleClick}
+        position={[-5, 0, 1]}
+        size={[4, 1, 0.5]}
+        colors={{ default: "#77E0F4", hovered: "#55C0E0" }}
+        fontSize={0.5}
+        font="/fonts/Poppins-Light.otf"
+        fontColor="black"
+      />
       <group ref={groupRef} visible={isVisible}>
         <Plane args={[20, 8]} position={[0, -1.5, -0.1]}>
           <meshStandardMaterial

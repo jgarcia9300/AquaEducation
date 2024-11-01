@@ -1,6 +1,15 @@
 import { OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
 
+/**
+ * Controls component that wraps the OrbitControls for a 3D scene.
+ *
+ * This component provides constraints for the orbiting camera, such as
+ * minimum and maximum distances, polar angles, and azimuth angles. It also
+ * enables damping for smoother transitions.
+ *
+ * @returns {JSX.Element} The OrbitControls element with specified constraints.
+ */
 const Controls = () => {
   const cameraRef = useRef();
 
@@ -15,21 +24,6 @@ const Controls = () => {
       target={[0, -5, 0]}
       enableDamping
       dampingFactor={0.1}
-      // onChange={(e) => {
-      //   console.log("Position:", e.target.object.position);
-      //   console.log("Target:", e.target.target);
-      // }}
-      // onChange={(e) => {
-      //   const position = e.target.object.position;
-
-      //   // // Limita la posición X, Y, y Z de la cámara en el espacio
-      //   // position.x = Math.max(-10, Math.min(10, position.x));
-      //   // position.y = Math.max(-5, Math.min(5, position.y));
-      //   // position.z = Math.max(-15, Math.min(15, position.z));
-
-      //   // // Actualiza la cámara con la nueva posición
-      //   // e.target.object.position.set(position.x, position.y, position.z);
-      // }}
       ref={cameraRef}
     />
   );

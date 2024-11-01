@@ -1,32 +1,14 @@
-import { DirectionalLightHelper, PointLightHelper } from "three";
+/* eslint-disable react/no-unknown-property */
+import { DirectionalLightHelper } from "three";
 import { OrthographicCamera, useHelper } from "@react-three/drei";
 import { useRef } from "react";
 
 const Lights = () => {
   const lightRef = useRef();
-
-  // Selecciona el helper adecuado para el tipo de luz que estás usando.
-  useHelper(lightRef, DirectionalLightHelper, 1); // Para luces direccionales
-  // useHelper(lightRef, PointLightHelper, 1); // Para luces puntuales
+  useHelper(lightRef, DirectionalLightHelper, 1);
 
   return (
-    // <directionalLight
-    //   ref={lightRef}
-    //   position={[0, 3, 20]}
-    //   intensity={2}
-    //   color={"#fee698 "}
-    //   shadow-mapSize-width={2048}
-    //   shadow-mapSize-height={2048}
-    //   shadow-camera-far={50}
-    //   shadow-camera-left={-10}
-    //   shadow-camera-right={10}
-    //   shadow-camera-top={10}
-    //   shadow-camera-bottom={-10}
-    //   castShadow
-    // />
-
     <directionalLight
-    //   ref={lightRef}
       castShadow
       position={[6, 12, 26]}
       shadow-mapSize={[2048, 2048]}
