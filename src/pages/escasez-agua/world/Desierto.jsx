@@ -55,7 +55,7 @@ const Desierto = (props) => {
         </Plane>
         <Text
           position={[0, 12, 0]}
-          font="/public/fonts/Poppins-Light.otf"
+          font="/fonts/Poppins-Light.otf"
           fontSize={0.5}
           color="black"
           anchorX="center"

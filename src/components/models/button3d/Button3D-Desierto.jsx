@@ -30,7 +30,7 @@ export const Button3D = ({text, onClick}) => {
       </Box>
       <Text
         position={[0, 0, 0.3]} // Ajusta la posición del texto sobre el botón
-        font="/public/fonts/Poppins-Light.otf"
+        font="/fonts/Poppins-Light.otf"
         fontSize={0.5}
         color="white"
         anchorX="center"
