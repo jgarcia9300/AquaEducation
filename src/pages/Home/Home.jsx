@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <main className="home">
       <video className="home__video" autoPlay muted loop>
-        <source src="/src/static/videos/video_home.mp4" type="video/mp4" />
+        <source src="/videos/video_home.mp4" type="video/mp4" />
       </video>
       <section className="home__section">
         <h1 className="home__title">EL AGUA Y EL MEDIO AMBIENTE</h1>

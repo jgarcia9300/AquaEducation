@@ -99,7 +99,7 @@ const AcidificationIntroduction = () => {
             </Plane>
 
             <Text3D
-              font="/public/fonts/Poppins-Bold.json"
+              font="/fonts/Poppins-Bold.json"
               size={0.5}
               height={0.05}
               position={[-12, 0, 0]}
@@ -160,7 +160,7 @@ const AcidificationIntroduction = () => {
             >
               <meshStandardMaterial color={hovered ? "#00aaff" : "#0291d9"} />
               <Text3D
-                font="/public/fonts/Poppins-Bold.json"
+                font="/fonts/Poppins-Bold.json"
                 position={[-0.9, -0.15, 0]}
                 size={0.3}
                 color={"#white"}
