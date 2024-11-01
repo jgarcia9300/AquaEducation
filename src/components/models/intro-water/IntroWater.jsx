@@ -4,8 +4,7 @@ import {
   OrbitControls,
   Text,
   Plane,
-  Sky,
-  Loader,
+  Sky
 } from "@react-three/drei";
 import { Texto3D } from "../text3d/Texto3D";
 import { useFrame, useThree } from "@react-three/fiber";
@@ -41,7 +40,7 @@ const IntroWater = () => {
 
   const animateCameraAndShowContent = () => {
     gsap.to(camera.position, {
-      y: camera.position.y - 10,
+      y: camera.position.y - 20,
       duration: 1,
       ease: "power1.out",
       onUpdate: () => {
@@ -80,7 +79,6 @@ const IntroWater = () => {
 
   return (
     <>
-      <Loader />
       <Sky
         sunPosition={[0, 1, -5]}
         inclination={0.2}
@@ -101,6 +99,7 @@ const IntroWater = () => {
         maxPolarAngle={Math.PI / 1.5}
         minAzimuthAngle={-Math.PI / 4}
         maxAzimuthAngle={Math.PI / 4}
+        maxDistance={20}
       />
       <Texto3D text={`CONTAMINACIÓN \n       DEL AGUA`} />
       <Button3D text={buttonState} onClick={handleClick} />
@@ -115,7 +114,7 @@ const IntroWater = () => {
         </Plane>
         <Text
           position={[0, -1.5, 0]}
-          font="/public/fonts/Poppins-Light.otf"
+          font="/fonts/Poppins-Light.otf"
           fontSize={0.5}
           color="black"
           anchorX="center"

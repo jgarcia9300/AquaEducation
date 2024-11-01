@@ -1,6 +1,5 @@
 // src/pages/ProblemaContaminacion.js
 import { Canvas } from '@react-three/fiber';
-import { Loader } from '@react-three/drei';
 import IntroWater from '../../../components/models/intro-water/IntroWater';
 import './ProblemaContaminacion.css';
 
