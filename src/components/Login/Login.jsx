@@ -1,9 +1,8 @@
 import { useCallback, useEffect } from 'react'
-import "./Login.css";
-import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from 'react-router-dom';
-import { div } from 'three/webgpu';
-import logo from '../../static/images/logo.jpg'
+import useAuthStore from "../../stores/use-auth-store";
+import logo from '../../assets/images/logo.jpg';
+import "./Login.css";
 
 const Login = () => {
 const { user, loginGoogleWithPopUp, logout, observeAuthState, loading } = useAuthStore();

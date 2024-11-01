@@ -6,7 +6,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout/Layout.jsx";
 import Login from "./components/Login/Login.jsx";
 import Home from "./pages/Home/Home.jsx";
-import ProblemasMedioAmbientales from "./pages/ProblemasMedioAmbientales/ProblemasMedioAmbientales.jsx";
 import ProblemaContaminacion from "./pages/ProblemasMedioAmbientales/ProblemaContaminacion/ProblemaContaminacion.jsx";
 import AcidificationIntroduction from "./pages/ProblemasMedioAmbientales/Acidification/Problem Introduccion/AcidificationIntroduction.jsx";
 
@@ -21,10 +20,6 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
-      },
-      {
-        path: "/problemas-ambientales",
-        element: <ProblemasMedioAmbientales />,
       },
       {
         path: "/problemas-ambientales/contaminacion-del-agua",

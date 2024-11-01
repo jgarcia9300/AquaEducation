@@ -1,9 +1,17 @@
 import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
 import "./Header.css";
-import Logo from "../../static/images/logo.jpg";
+import Logo from "../../assets/images/logo.jpg";
 import Button from "../Button/Button";
 
+/**
+ * HeaderDropdown component renders a dropdown menu with navigation links.
+ *
+ * @param {Object} props - The props for HeaderDropdown component.
+ * @param {string} props.padre - The base path for the navigation links.
+ * @returns {JSX.Element} The rendered dropdown menu element, containing links
+ *          to various environmental problems under the specified path.
+ */
 const HeaderDropdown = ({ padre }) => {
   return (
     <ul className="header__nav__ul__dropdown">
@@ -40,6 +48,13 @@ HeaderDropdown.propTypes = {
   padre: PropTypes.string.isRequired,
 };
 
+/**
+ * Header component that renders the top navigation bar for the application.
+ *
+ * @returns {JSX.Element} The rendered header element containing navigation links,
+ *          a brand logo, and action buttons. It includes dropdown menus for 
+ *          environmental issues and exploration links.
+ */
 const Header = () => {
   return (
     <header className="header">
