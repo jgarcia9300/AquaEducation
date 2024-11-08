@@ -129,7 +129,7 @@ const IntroWater = () => {
         fontColor="black"
       />
       <group ref={groupRef} visible={isVisible}>
-        <Plane args={[20, 8]} position={[0, -1.5, -0.1]} receiveShadow>
+        <Plane args={[20, 8]} position={[0, -1.5, -0.1]} castShadow>
           <meshStandardMaterial
             attach="material"
             color="white"
