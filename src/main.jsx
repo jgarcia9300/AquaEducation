@@ -9,6 +9,7 @@ import Home from "./pages/Home/Home.jsx";
 import ProblemaContaminacion from "./pages/ProblemasMedioAmbientales/ProblemaContaminacion/ProblemaContaminacion.jsx";
 import AcidificationIntroduction from "./pages/ProblemasMedioAmbientales/Acidification/Problem Introduccion/AcidificationIntroduction.jsx";
 import EscazesDelAgua from './pages/escasez-agua/EscazesDelAgua.jsx'
+import { ExploracionContaminacion } from "./pages/exploracion/contaminacion/ExploracionContaminacion.jsx";
 
 
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         path: "problemas-ambientales/escasez-del-agua",
         element: <EscazesDelAgua/>,
       },
+      {
+        path: "exploracion/contaminacion-del-agua",
+        element: <ExploracionContaminacion />,
+      }
     ],
   },
 ]);
