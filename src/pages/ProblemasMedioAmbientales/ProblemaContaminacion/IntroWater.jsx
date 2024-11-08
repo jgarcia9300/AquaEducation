@@ -7,6 +7,7 @@ import Button3D from "../../../components/models/button3d/Button3D";
 import { Texto3D } from "../../../components/models/text3d/Texto3D";
 import * as THREE from "three";
 import gsap from "gsap";
+import { WaterAnimationModel } from "./WaterAnimationModel";
 
 
 /**
@@ -24,6 +25,8 @@ const IntroWater = () => {
   const [clickedOnce, setClickedOnce] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const { camera, gl } = useThree();
+  gl.shadowMap.enabled = true;
+  gl.shadowMap.type = THREE.PCFSoftShadowMap;
   const mixer = useRef(new AnimationMixer(scene));
   const controlsRef = useRef();
   const groupRef = useRef();
@@ -96,8 +99,14 @@ const IntroWater = () => {
         turbidity={2}
       />
       <ambientLight intensity={0.5} />
-      <directionalLight position={[0, 3, 7]} intensity={1} castShadow />
-      <primitive object={scene} scale={5} position={[0, 0, 0]} />
+      <directionalLight
+        position={[0, 3, 7]}
+        intensity={1}
+        castShadow
+        shadow-mapSize-width={4000}
+        shadow-mapSize-height={1024}
+      />
+      <WaterAnimationModel scale={5} />
       <OrbitControls
         ref={controlsRef}
         args={[camera, gl.domElement]}
@@ -120,7 +129,7 @@ const IntroWater = () => {
         fontColor="black"
       />
       <group ref={groupRef} visible={isVisible}>
-        <Plane args={[20, 8]} position={[0, -1.5, -0.1]}>
+        <Plane args={[20, 8]} position={[0, -1.5, -0.1]} receiveShadow>
           <meshStandardMaterial
             attach="material"
             color="white"
