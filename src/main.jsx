@@ -8,8 +8,9 @@ import Login from "./components/Login/Login.jsx";
 import Home from "./pages/Home/Home.jsx";
 import ProblemaContaminacion from "./pages/ProblemasMedioAmbientales/ProblemaContaminacion/ProblemaContaminacion.jsx";
 import AcidificationIntroduction from "./pages/ProblemasMedioAmbientales/Acidification/Problem Introduccion/AcidificationIntroduction.jsx";
-import EscazesDelAgua from './pages/escasez-agua/EscazesDelAgua.jsx'
 import { ExploracionContaminacion } from "./pages/exploracion/contaminacion/ExploracionContaminacion.jsx";
+import WaterScarcity from "./pages/escasez-agua/WaterScarcity.jsx";
+import River from "./pages/exploracion/water-scarcity/River.jsx";
 
 
 
@@ -30,8 +31,8 @@ const router = createBrowserRouter([
         element: <ProblemaContaminacion />,
       },
       {
-        path: "/problemas-ambientales/escasez-del-agua",
-        element: <EscazesDelAgua/>,
+        path: "problemas-ambientales/escasez-del-agua",
+        element: <WaterScarcity/>,
       },
       {
         path: "/problemas-ambientales/acidificacion-de-los-oceanos",
@@ -41,13 +42,14 @@ const router = createBrowserRouter([
         path: "*", // Esto manejará las rutas no encontradas
         element: <h1>404 - Página no encontrada</h1>,
       },
-      {
-        path: "problemas-ambientales/escasez-del-agua",
-        element: <EscazesDelAgua/>,
-      },
+
       {
         path: "exploracion/contaminacion-del-agua",
         element: <ExploracionContaminacion />,
+      },
+      {
+        path: "exploracion/escasez-del-agua",
+        element: <River />,
       }
     ],
   },
