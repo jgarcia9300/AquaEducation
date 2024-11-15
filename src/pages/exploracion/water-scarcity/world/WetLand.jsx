@@ -1,6 +1,8 @@
+import { useFrame } from "@react-three/fiber";
 import { useRef} from "react";
-import {useGLTF, useAnimations} from '@react-three/drei'
+import {useGLTF, useAnimations, useScroll} from '@react-three/drei'
 import DesertElements from "../3d-elements/DesertElements";
+import Scroll from "../controls/Scroll";
 
 
 const WetLand = (props) => {
@@ -10,6 +12,7 @@ const WetLand = (props) => {
 
   return (
     <>
+    <Scroll />
     {/* <DesertElements /> */}
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>

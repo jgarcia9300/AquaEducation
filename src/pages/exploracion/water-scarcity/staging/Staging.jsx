@@ -11,7 +11,7 @@ function Staging() {
         azimuth={180}
         mieCoefficient={0.005}
         mieDirectionalG={0.05}
-        rayleigh={0.6}
+        rayleigh={0.1}
         turbidity={1}
       />
       </>
