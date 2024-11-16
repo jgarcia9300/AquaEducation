@@ -90,7 +90,7 @@ const IntroWater = () => {
   return (
     <>
       <Sky
-        sunPosition={[0, 1, -5]}
+        sunPosition={[0, 3, -5]}
         inclination={0.2}
         azimuth={180}
         mieCoefficient={0.005}
@@ -101,7 +101,7 @@ const IntroWater = () => {
       <ambientLight intensity={0.5} />
       <directionalLight
         position={[0, 3, 7]}
-        intensity={1}
+        intensity={2}
         castShadow
         shadow-mapSize-width={4000}
         shadow-mapSize-height={1024}

@@ -1,0 +1,41 @@
+/* Estilo para el título principal */
+.exploracion-header {
+  display: flex;
+  position: relative;
+  top: 24px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+}
+
+/* Estilo para el contenedor HTML */
+.exploracion-html-container {
+  color: black;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+}
+
+/* Estilo para el título dentro del contenedor */
+.exploracion-html-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* Estilo para el párrafo dentro del contenedor */
+.exploracion-html-paragraph {
+  font-size: 1em;
+  margin: 0.5em 0 0;
+}
+
+/* Estilo para el botón dentro del contenedor */
+.exploracion-html-button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
