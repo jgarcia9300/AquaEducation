@@ -13,7 +13,7 @@ import './ProblemaContaminacion.css';
 const ProblemaContaminacion = () => {
   return (
     <main className="problema-contaminacion">
-      <Canvas camera={{ position: [0, 2, 12] }} className="canvas-background">
+      <Canvas camera={{ position: [0, 2, 12] }} shadows className="canvas-background">
         <IntroWater />
       </Canvas>
     </main>
