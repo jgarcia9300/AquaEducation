@@ -1,5 +1,6 @@
 import { OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
+import * as THREE from "three";
 
 /**
  * Controls component that wraps the OrbitControls for a 3D scene.
@@ -15,8 +16,8 @@ const Controls = () => {
 
   return (
     <OrbitControls
-      minDistance={12}
-      maxDistance={16}
+      minDistance={16}
+      maxDistance={22}
       minPolarAngle={Math.PI / 4}
       maxPolarAngle={Math.PI / 2}
       minAzimuthAngle={-Math.PI / 3}
@@ -25,6 +26,10 @@ const Controls = () => {
       enableDamping
       dampingFactor={0.1}
       ref={cameraRef}
+      mouseButtons={{
+        RIGHT: null, // Deshabilita el clic derecho
+        LEFT: THREE.MOUSE.LEFT, // Asegúrate de no interferir con el clic del medio
+      }}
     />
   );
 };
