@@ -5,6 +5,7 @@ import Staging from '../water-scarcity/staging/Staging';
 import WetLand from './world/WetLand';
 import { ScrollControls } from '@react-three/drei';
 // import { Physics } from '@react-three/rapier';
+import Text from './2d-elements/Text';
 
 
 const River= () => {
@@ -14,8 +15,9 @@ const River= () => {
   };
 
   return (
-    // <KeyboardControls map={map}>
-
+    <>
+    <Text/>
+    {/* // <KeyboardControls map={map}> */}
       <Canvas  shadows camera={cameraSettings}>
         {/* <Controls /> */}
         <Lights />
@@ -26,8 +28,8 @@ const River= () => {
         </ScrollControls>
         {/* </Physics> */}
       </Canvas>
-    /* // </KeyboardControls> */
-
+    {/* /* // </KeyboardControls> */ }
+    </>
   );
 
 }

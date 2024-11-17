@@ -1,9 +1,0 @@
-Estilo para el título principal
-.exploracion-header {
-  display: flex;
-  position: relative;
-  top: 24px;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.8);
-  width: 100%;
-}
