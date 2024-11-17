@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { ExploracionContaminacionModel } from "./ExploracionContaminacionModel";
 import { Canvas } from "@react-three/fiber";
 import { Html, Sky } from "@react-three/drei";
-import Controls from "../controls/controls";
+import Controls from "../controls/Controls";
 import { Vector3 } from "three";
 import { useAspectsStore } from "../../../stores/store-aspects-select";
 import "./ExploracionContaminacion.css";
