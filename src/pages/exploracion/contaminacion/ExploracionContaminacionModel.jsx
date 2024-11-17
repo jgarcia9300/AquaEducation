@@ -1,10 +1,9 @@
-import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function ExploracionContaminacionModel(props) {
   const { nodes, materials } = useGLTF('/models-3d/Contamination.glb')
   return (
-    <group {...props} dispose={null} scale={0.025}>
+    <group {...props} dispose={null} scale={0.025} rotation={[0, -1.3, 0]}>
       <group position={[30.073, -48.859, -0.041]} scale={0.1}>
         <mesh
           castShadow

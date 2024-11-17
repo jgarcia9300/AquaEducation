@@ -80,7 +80,7 @@ const Header = () => {
           </li>
           <li className="header__nav__ul__li">
             <NavLink
-              to="/exploracion"
+              to="/exploracion/contaminacion-del-agua"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               EXPLORACIÓN

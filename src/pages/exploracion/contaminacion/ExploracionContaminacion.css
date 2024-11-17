@@ -1,0 +1,50 @@
+.exploracion-header {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.exploracion-header-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.exploracion-html-container {
+  color: black;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  text-align: center;
+  width: 400px;
+}
+
+.exploracion-html-title {
+  font-size: 1.5em;
+  color: #0EA2E9;
+  margin: 0;
+  font-weight: bold;
+}
+
+.exploracion-html-paragraph {
+  font-size: 1em;
+  margin: 0.5em 0 0;
+}
+
+.exploracion-html-button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
