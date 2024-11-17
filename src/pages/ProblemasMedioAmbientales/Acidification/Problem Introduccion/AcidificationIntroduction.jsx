@@ -16,6 +16,7 @@ import IntroModels from "./IntroModels.jsx";
 import Controls from "./Control/ControlCamera.jsx";
 import Lights from "./Lights/Lights.jsx";
 import Staging from "./Staging/Staging.jsx";
+import { useNavigate } from "react-router-dom";
 
 extend({ Box, Plane });
 
@@ -50,6 +51,8 @@ const AcidificationIntroduction = () => {
   const [clicked, setClicked] = useState(false);
   const [goToExplore, setGoToExplore] = useState(false);
 
+  const navigate = useNavigate();
+
   // let text =
   // "Los océanos brindan sustento económico a más de 3000 millones de personas, generan gran parte del aire que respiramos y absorben gases de efecto invernadero. Lamentablemente, las actividades humanas han alterado profundamente la composición química de sus aguas. Desde finales de la década de 1980, el 95 % de las aguas superficiales a mar abierto se han vuelto más ácidas, tras absorber una cantidad considerable de dióxido de carbono (CO2). Este fenómeno se ha intensificado debido a que la cantidad de CO2 en la atmósfera ha alcanzado un volumen un 50 % superior al que existía antes de la revolución industrial.";
 
@@ -82,7 +85,7 @@ const AcidificationIntroduction = () => {
     // textGroupRef.current.visible = !textGroupRef.current.visible;
     console.log(textInfo.current);
     if (goToExplore) {
-      window.location.href = "/exploracion/acidificacion-de-los-oceanos";
+      navigate("/exploracion/acidificacion-de-los-oceanos");
     } else {
       goToExplore ? setGoToExplore(false) : setGoToExplore(true);
     }
