@@ -4,7 +4,6 @@ import {useGLTF, useAnimations, useScroll} from '@react-three/drei'
 import DesertElements from "../3d-elements/DesertElements";
 import Scroll from "../controls/Scroll";
 
-
 const WetLand = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/models-3d/Wetland.glb')

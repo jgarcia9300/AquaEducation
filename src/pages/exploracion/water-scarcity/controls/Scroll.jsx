@@ -2,6 +2,7 @@ import {useScroll} from '@react-three/drei';
 import { useFrame } from "@react-three/fiber";
 import { Html } from '@react-three/drei';
 import { useState } from 'react';
+// import "../River.css"
 
 const Scroll = () => {
 
@@ -33,7 +34,9 @@ const Scroll = () => {
 
     return (
         <>
-          <Html position={[0, 0, 0]}>
+          <Html position={[0, 10, 0]}>
+          <div className='.exploracion-header'> Hola </div>
+         
             <div style={{ color: "white", fontSize: "24px", textAlign: "center" }}>
               {text}
             </div>
