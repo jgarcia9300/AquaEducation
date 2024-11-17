@@ -1,0 +1,17 @@
+.river-text {
+  background-color: rgba(255, 255, 255, 0.1);
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.river-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: deepskyblue;
+}
