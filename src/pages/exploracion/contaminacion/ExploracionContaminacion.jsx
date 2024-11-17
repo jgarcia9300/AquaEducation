@@ -10,22 +10,26 @@ import "./ExploracionContaminacion.css";
 const texts = [
   {
     title: "Causas",
-    content: "La contaminación del agua afecta la calidad de nuestros recursos hídricos, poniendo en riesgo la salud de ecosistemas acuáticos y de las comunidades que dependen de ellos.",
+    content:
+      "La contaminación del agua tiene múltiples causas, entre las principales se encuentran el vertido de aguas residuales sin tratar, el uso excesivo de fertilizantes y pesticidas en la agricultura, la deforestación que incrementa la erosión del suelo, y los derrames de petróleo. Además, la disposición incorrecta de plásticos y otros desechos sólidos contribuye al deterioro de la calidad del agua, afectando tanto a los ecosistemas acuáticos como a las fuentes de agua potable.",
   },
   {
     title: "Impactos",
-    content: "El impacto de la contaminación incluye la pérdida de biodiversidad, enfermedades humanas y la degradación de los ecosistemas acuáticos.",
+    content:
+      "Los impactos de la contaminación del agua son significativos y diversos. A nivel ambiental, provoca la destrucción de hábitats acuáticos, la pérdida de biodiversidad, y el desequilibrio de los ecosistemas. En el ámbito humano, la contaminación contribuye a la propagación de enfermedades transmitidas por el agua, como el cólera y la diarrea, afectando especialmente a comunidades vulnerables. También tiene consecuencias económicas, ya que limita el acceso a agua potable y encarece su tratamiento, impactando sectores como la pesca y la agricultura.",
   },
   {
     title: "Soluciones",
-    content: "Fomentar el reciclaje, el tratamiento adecuado de aguas residuales y la educación ambiental son claves para reducir la contaminación del agua.",
+    content:
+      "Para combatir la contaminación del agua, es esencial implementar soluciones integrales y sostenibles. Entre las medidas clave se incluyen el tratamiento adecuado de aguas residuales antes de su descarga, la promoción de prácticas agrícolas sostenibles que reduzcan el uso de químicos, y la conservación de los ecosistemas naturales como bosques y humedales. También es crucial fomentar la educación ambiental para concienciar sobre el uso responsable del agua, junto con políticas gubernamentales estrictas que regulen las actividades industriales y comerciales que puedan afectar la calidad del agua.",
   },
 ];
 
+
 const cameraPositions = [
-  new Vector3(0.3, 0.75, 2.99), // Cámara para "Causas"
-  new Vector3(0.3, 1.5, 3.5),   // Cámara para "Impactos"
-  new Vector3(-0.3, 1.2, 3.0),  // Cámara para "Soluciones"
+  new Vector3(0, 2, 4), // Cámara para "Causas"
+  new Vector3(0.5, 1, 2.99),   // Cámara para "Impactos"
+  new Vector3(1, 1, 2),  // Cámara para "Soluciones"
 ];
 
 export const ExploracionContaminacion = () => {
@@ -73,14 +77,14 @@ export const ExploracionContaminacion = () => {
       handleAspect(
         texts[1].title,
         cameraPositions[1],
-        [0, 2, 0]
+        [-5, 1, 0]
       );
     } else if (event.code === "Digit3") {
       setCurrentIndex(2); // Selecciona "Soluciones" con el número 3
       handleAspect(
         texts[2].title,
         cameraPositions[2],
-        [5, 1, 0]
+        [-7, 1, 0]
       );
     }
   };
@@ -95,10 +99,10 @@ export const ExploracionContaminacion = () => {
   return (
     <>
       <div className="exploracion-header">
-        <h1>Exploración Contaminación</h1>
+        <h1 className="exploracion-header-title">Exploración Contaminación</h1>
         <p>
-          Usa <strong>Espacio</strong> para cambiar entre textos: Causas,
-          Impactos y Soluciones. También puedes usar los números <strong>1</strong>, <strong>2</strong> y <strong>3</strong> para navegar directamente.
+          Usa <strong>Espacio</strong> para cambiar entre las Secciones: Causas,
+          Impactos y Soluciones. También puedes usar las teclas <strong>1(Causas)</strong>, <strong>2(Impactos)</strong> y <strong>3(Soluciones)</strong> para navegar directamente.
         </p>
       </div>
       <Canvas camera={{ position: [0, 10, 4], fov: 100 }} shadows>
@@ -133,7 +137,7 @@ export const ExploracionContaminacion = () => {
                 handleNext()
               }
             >
-              Leer más
+              Siguiente
             </button>
           </div>
         </Html>
