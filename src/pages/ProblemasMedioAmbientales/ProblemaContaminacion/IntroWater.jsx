@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { useRef, useEffect, useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGLTF, OrbitControls, Text, Plane, Sky } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { AnimationMixer } from "three";
@@ -25,6 +26,7 @@ const IntroWater = () => {
   const [clickedOnce, setClickedOnce] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const { camera, gl } = useThree();
+  const navigate = useNavigate();
   gl.shadowMap.enabled = true;
   gl.shadowMap.type = THREE.PCFSoftShadowMap;
   const mixer = useRef(new AnimationMixer(scene));
@@ -83,7 +85,7 @@ const IntroWater = () => {
       setClickedOnce(true);
       setButtonState("IR A EXPLORAR");
     } else {
-      window.location.href = "/exploracion/contaminacion-del-agua";
+      navigate("/exploracion/contaminacion-del-agua");
     }
   }, [clickedOnce]);
 
