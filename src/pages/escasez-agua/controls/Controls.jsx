@@ -7,9 +7,9 @@ const Controls = () => {
   return (<OrbitControls 
     // makeDefault
   
-    maxPolarAngle={Math.PI * 0.45}
-    minPolarAngle={Math.PI * 0.45} 
-    target={[0,5,-10]}
+    // maxPolarAngle={Math.PI * 0.45}
+    // minPolarAngle={Math.PI * 0.45} 
+    // target={[0,5,-10]}
   
   />
   )

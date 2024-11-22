@@ -1,6 +1,7 @@
 import { useRef} from "react";
 import {useGLTF, useAnimations} from '@react-three/drei'
 import DesertElements from "../3d-elements/DesertElements";
+import { RigidBody } from "@react-three/rapier";
 
 
 const Desert = (props) => {
@@ -11,8 +12,10 @@ const Desert = (props) => {
   return (
     <>
     <DesertElements />
+    <RigidBody type="fixed">
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
+
         <group
           name="House"
           position={[-1.966, 0.21, -0.834]}
@@ -832,6 +835,7 @@ const Desert = (props) => {
         </group>
       </group>
     </group>
+    </RigidBody>
     </>
     
   )

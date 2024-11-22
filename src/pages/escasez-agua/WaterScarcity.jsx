@@ -4,6 +4,8 @@ import Desert from './world/Desert';
 import Lights from './lights/Lights';
 import Controls from './controls/Controls';
 import Staging from './staging/Staging';
+import Iguana from './world/Iguana';
+import { Physics } from "@react-three/rapier";
 // import { Physics } from '@react-three/rapier';
 
 
@@ -18,10 +20,12 @@ const WaterScarcity= () => {
       <Canvas  shadows camera={cameraSettings}>
         <Controls />
         <Lights />
-        {/* <Physics debug={true} > */}
+        <Physics debug={false}>
         <Desert />
+        <Iguana position={[0, 0, 8]} />
         <Staging/>
-        {/* </Physics> */}
+
+        </Physics>
       </Canvas>
     // </KeyboardControls>
   );

@@ -1,13 +1,15 @@
 import {Text, Plane} from '@react-three/drei'
 import { Texto3D } from "../../../components/models/text3d/Texto3D-Desierto";
 import { Button3D } from "../../../components/models/button3d/Button3D-Desierto";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const DesertElements = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [clickedOnce, setClickedOnce] = useState(false);
     const [buttonState, setButtonState] = useState("A QUE SE REFIERE?");
+    const navigate = useNavigate();
   
     const handleClick = useCallback(() => {
       if (!clickedOnce) {
@@ -15,7 +17,7 @@ const DesertElements = () => {
         setButtonState("EXPLOREMOS JUNTOS");
         setIsVisible(true)
       } else {
-        window.location.href = "/exploracion/escasez-del-agua";
+        navigate("/exploracion/escasez-del-agua");
       }
     }, [clickedOnce]);
   
