@@ -12,6 +12,7 @@ import AcidificationExploration from "./pages/ProblemasMedioAmbientales/Acidific
 import { ExploracionContaminacion } from "./pages/exploracion/contaminacion/ExploracionContaminacion.jsx";
 import WaterScarcity from "./pages/escasez-agua/WaterScarcity.jsx";
 import River from "./pages/exploracion/water-scarcity/River.jsx";
+import Sensibilization from "./pages/sensibilizacion/escasez-agua/Sensibilization.jsx";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/exploracion/acidificacion-de-los-oceanos",
         element: <AcidificationExploration />,
+      },
+      {
+        path: "/sensibilizacion/escasez-del-agua",
+        element: <Sensibilization />,
       },
     ],
   },
