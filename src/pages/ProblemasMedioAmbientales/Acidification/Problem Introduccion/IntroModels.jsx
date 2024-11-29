@@ -66,13 +66,13 @@ const IntroModels = (props) => {
           geometry={nodes.Object_7_4.geometry}
           material={materials["M_coral.001"]}
         />
-        <mesh
+        {/* <mesh
           name="smallBrownCoral"
           castShadow
           receiveShadow
           geometry={nodes.Object_7_5.geometry}
           material={materials["M_coral.002"]}
-        />
+        /> */}
         <mesh
           name="smallOrangeCoral"
           castShadow
@@ -80,13 +80,13 @@ const IntroModels = (props) => {
           geometry={nodes.Object_7_6.geometry}
           material={materials.M_coral}
         />
-        <mesh
+        {/* <mesh
           name="greatRedCoral"
           castShadow
           receiveShadow
           geometry={nodes.Object_7_7.geometry}
           material={materials.M_coral_01}
-        />
+        /> */}
         <mesh
           name="mushroom1"
           castShadow
@@ -94,13 +94,13 @@ const IntroModels = (props) => {
           geometry={nodes.Object_7_8.geometry}
           material={materials.M_coral_02}
         />
-        <mesh
+        {/* <mesh
           name="mushroom2"
           castShadow
           receiveShadow
           geometry={nodes.Object_7_9.geometry}
           material={materials.M_coral_03}
-        />
+        /> */}
       </group>
     </group>
   );
