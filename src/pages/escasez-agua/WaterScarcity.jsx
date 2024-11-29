@@ -9,6 +9,7 @@ import { Physics } from "@react-three/rapier";
 // import { Physics } from '@react-three/rapier';
 
 
+
 const WaterScarcity= () => {
   const cameraSettings = {
     position: [0, 15, 16],

@@ -17,6 +17,7 @@
     "@react-three/rapier": "^1.5.0",
     "@types/three": "^0.168.0",
     "aqua-education": "file:",
+    "ecctrl": "^1.0.92",
     "esbuild": "^0.23.1",
     "firebase": "^10.13.1",
     "gsap": "^3.12.5",

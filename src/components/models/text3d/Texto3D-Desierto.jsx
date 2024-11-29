@@ -13,7 +13,7 @@ export const Texto3D = ({text}) => {
         size={0.9}
         castShadow
         receiveShadow
-        position={[-6, 16, 0]}
+        position={[-4, 16, 0]}
       >
         {text}
         <meshStandardMaterial attach="material" color="#db9926" />
