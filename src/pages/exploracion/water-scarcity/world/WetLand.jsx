@@ -12,7 +12,7 @@ const WetLand = (props) => {
   return (
     <>
     <Scroll />
-    {/* <DesertElements /> */}
+    <DesertElements />
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh

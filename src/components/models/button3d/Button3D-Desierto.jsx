@@ -1,12 +1,10 @@
 import { Text, Box } from "@react-three/drei";
 import { useState } from "react";
 
-
-export const Button3D = ({text, onClick}) => {
-
+export const Button3D = ({ text, onClick }) => {
   const [hovered, setHovered] = useState(false);
   return (
-    <group position={[0, 7, 1]}>
+    <group position={[0, 7, 0]}>
       <Box
         args={[6, 1, 0.5]} // Tamaño del botón
         onClick={onClick} // Llama a la función al hacer clic
@@ -23,10 +21,10 @@ export const Button3D = ({text, onClick}) => {
         castShadow
         receiveShadow
       >
-        <meshStandardMaterial 
-          attach="material" 
-          color={hovered ? "#b48704" : "#f9ba04"} 
-          // color={hovered ? "#55C0E0" : "#db9926"} 
+        <meshStandardMaterial
+          attach="material"
+          color={hovered ? "#b48704" : "#f9ba04"}
+          // color={hovered ? "#55C0E0" : "#db9926"}
         />
       </Box>
       <Text
