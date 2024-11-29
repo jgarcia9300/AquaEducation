@@ -1,6 +1,6 @@
 import { Text3D } from "@react-three/drei";
 
-export const Texto3D = ({text}) => {
+export const Texto3D = ({text, color, position}) => {
   return (
     <Text3D
         font="/fonts/Poppins-Bold.json"
@@ -13,10 +13,10 @@ export const Texto3D = ({text}) => {
         size={0.9}
         castShadow
         receiveShadow
-        position={[-6, 5, 0]}
+        position={position}
       >
         {text}
-        <meshStandardMaterial attach="material" color="#0EA2E9" />
+        <meshStandardMaterial attach="material" color={color} />
     </Text3D>
   )
 }

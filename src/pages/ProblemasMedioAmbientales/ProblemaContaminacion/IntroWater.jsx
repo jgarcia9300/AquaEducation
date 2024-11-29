@@ -9,6 +9,7 @@ import { Texto3D } from "../../../components/models/text3d/Texto3D";
 import * as THREE from "three";
 import gsap from "gsap";
 import { WaterAnimationModel } from "./WaterAnimationModel";
+import { SeaFishesModel } from "./SeaFishesModel";
 
 
 /**
@@ -109,6 +110,8 @@ const IntroWater = () => {
         shadow-mapSize-height={1024}
       />
       <WaterAnimationModel scale={5} />
+      <SeaFishesModel position={[5, -12, 0]} scale={3} />
+      <SeaFishesModel position={[-10, -10, 2]} rotation={[0, Math.PI / 2, 0]} scale={3} />
       <OrbitControls
         ref={controlsRef}
         args={[camera, gl.domElement]}
@@ -119,7 +122,7 @@ const IntroWater = () => {
         maxAzimuthAngle={Math.PI / 4}
         maxDistance={20}
       />
-      <Texto3D text={`CONTAMINACIÓN \n       DEL AGUA`} />
+      <Texto3D text={`CONTAMINACIÓN \n       DEL AGUA`} color="#0EA2E9" position={[-6, 5, 0]} />
       <Button3D
         text={buttonState}
         onClick={handleClick}

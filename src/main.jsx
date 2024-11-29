@@ -9,6 +9,7 @@ import Home from "./pages/Home/Home.jsx";
 import ProblemaContaminacion from "./pages/ProblemasMedioAmbientales/ProblemaContaminacion/ProblemaContaminacion.jsx";
 import AcidificationIntroduction from "./pages/ProblemasMedioAmbientales/Acidification/Problem Introduccion/AcidificationIntroduction.jsx";
 import AcidificationExploration from "./pages/ProblemasMedioAmbientales/Acidification/Exploration/ExploringAcidification.jsx";
+import AcidificationSolutions from "./pages/ProblemasMedioAmbientales/Acidification/Solutions/AcidificationSolutions.jsx";
 import { ExploracionContaminacion } from "./pages/exploracion/contaminacion/ExploracionContaminacion.jsx";
 import WaterScarcity from "./pages/escasez-agua/WaterScarcity.jsx";
 import River from "./pages/exploracion/water-scarcity/River.jsx";
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "/exploracion/acidificacion-de-los-oceanos",
         element: <AcidificationExploration />,
+      },
+      {
+        path: "/soluciones/acidificacion-de-los-oceanos",
+        element: <AcidificationSolutions />,
       },
       {
         path: "/sensibilizacion/escasez-del-agua",
