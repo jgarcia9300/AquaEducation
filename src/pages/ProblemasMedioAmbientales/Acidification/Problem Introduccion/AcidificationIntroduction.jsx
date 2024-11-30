@@ -110,14 +110,16 @@ const AcidificationIntroduction = () => {
           rayleigh={1}
           turbidity={2}
         />
-        <Texto3D
-          text={`  ACIDIFICACIÓN   \nDE LOS OCÉANOS`}
-          bevelEnabled={true}
-          bevelThickness={0.1}
-          bevelSize={0.05}
-          bevelOffset={0}
-          bevelSegments={5}
-        />
+        <group position={[-5, 7, 0]}>
+          <Texto3D
+            text={`  ACIDIFICACIÓN   \nDE LOS OCÉANOS`}
+            bevelEnabled={true}
+            bevelThickness={0.1}
+            bevelSize={0.05}
+            bevelOffset={0}
+            bevelSegments={5}
+          />
+        </group>
         <group ref={textGroupRef} visible={true}>
           <Plane args={[25, 12]} position={[-0.6, -4.6, -0.1]}>
             <meshStandardMaterial attach="material" opacity={0.4} transparent />
