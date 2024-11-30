@@ -1,5 +1,4 @@
 import "./Home.css";
-import Button from "../../components/Button/Button";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
 import { HomeRiverModel } from "./HomeRiverModel";
@@ -19,7 +18,7 @@ const Home = () => {
   return (
     <main className="home">
       <Canvas className="home__canvas" camera={{ position: [0, 2, 11], fov: 100 } } shadows>
-        <Sky sunPosition={[12, 1, -6]} inclination={0.2} azimuth={180}/>
+        <Sky sunPosition={[10, 1, -6]} inclination={0.2} azimuth={180}/>
         <ambientLight intensity={0.5} />
         <directionalLight 
           position={[10, 10, 0]} 

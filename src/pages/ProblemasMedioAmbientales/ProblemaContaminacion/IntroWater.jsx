@@ -10,6 +10,7 @@ import * as THREE from "three";
 import gsap from "gsap";
 import { WaterAnimationModel } from "./WaterAnimationModel";
 import { SeaFishesModel } from "./SeaFishesModel";
+import { CuboidCollider, Physics, RigidBody } from "@react-three/rapier";
 
 
 /**
@@ -109,7 +110,6 @@ const IntroWater = () => {
         shadow-mapSize-width={4000}
         shadow-mapSize-height={1024}
       />
-      <WaterAnimationModel scale={5} />
       <SeaFishesModel position={[5, -12, 0]} scale={3} />
       <SeaFishesModel position={[-10, -10, 2]} rotation={[0, Math.PI / 2, 0]} scale={3} />
       <OrbitControls
@@ -122,7 +122,13 @@ const IntroWater = () => {
         maxAzimuthAngle={Math.PI / 4}
         maxDistance={20}
       />
-      <Texto3D text={`CONTAMINACIÓN \n       DEL AGUA`} color="#0EA2E9" position={[-6, 5, 0]} />
+      <Physics debug>
+          <WaterAnimationModel scale={5} />
+        <RigidBody type="dynamic" colliders={false} restitution={1.5} >
+          <Texto3D text={`CONTAMINACIÓN \n       DEL AGUA`} color="#0EA2E9" position={[-6, 5, 0]} />
+          <CuboidCollider args={[6, 2, 3]} position={[0, 5, 0]} />
+        </RigidBody>
+      </Physics>
       <Button3D
         text={buttonState}
         onClick={handleClick}

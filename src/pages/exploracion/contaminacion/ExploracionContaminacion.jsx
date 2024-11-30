@@ -125,7 +125,7 @@ export const ExploracionContaminacion = () => {
         />
         <Controls />
 
-        <ExploracionContaminacionModel />
+        <ExploracionContaminacionModel handleIndex={currentIndex} />
 
         <Html position={ubication} center>
           <div className="exploracion-html-container">
