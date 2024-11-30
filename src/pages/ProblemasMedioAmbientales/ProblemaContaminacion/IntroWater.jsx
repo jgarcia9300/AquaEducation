@@ -122,7 +122,7 @@ const IntroWater = () => {
         maxAzimuthAngle={Math.PI / 4}
         maxDistance={20}
       />
-      <Physics debug>
+      <Physics>
           <WaterAnimationModel scale={5} />
         <RigidBody type="dynamic" colliders={false} restitution={1.5} >
           <Texto3D text={`CONTAMINACIÓN \n       DEL AGUA`} color="#0EA2E9" position={[-6, 5, 0]} />
