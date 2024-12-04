@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { KeyboardControls, OrbitControls } from '@react-three/drei';
+import { KeyboardControls, Loader, OrbitControls } from '@react-three/drei';
 import React from 'react'
 import Desert from './world/Desert';
 import Lights from './lights/Lights';
@@ -15,7 +15,7 @@ import Robot from './world/Robot';
 import SphereRobot from './world/SphereRobot';
 import KeyImage from '../KeyImage';
 import Iguana from '../../escasez-agua/world/Iguana';
-
+import { Perf } from 'r3f-perf';
 
 
 
@@ -25,6 +25,11 @@ const Solutions= () => {
 
   const map = useMovements();
   const characterURL = '/models-3d/Adventurer.glb'
+
+  const customContainerStyles = {
+    backgroundColor: 'lightblue', // Change this to your desired color
+    // Add other styles if needed
+  };
 
   // const animationSet = {
   //   idle: 'CharacterArmature|Idle',
@@ -45,6 +50,8 @@ const Solutions= () => {
     <KeyboardControls map={map}>
       <Canvas  shadows
        >
+        <Suspense fallback={null}>
+        {/* <Perf /> */}
         <OrbitControls/>
         <KeyImage/>
         <Lights />
@@ -68,7 +75,9 @@ const Solutions= () => {
         <Desert />
         <Iguana position={[10, 0, 8]}/>
         </Physics>
+        </Suspense>
       </Canvas>
+      <Loader containerStyles={customContainerStyles} />
     </KeyboardControls>
   );
 
