@@ -45,7 +45,7 @@ const Solutions= () => {
     <KeyboardControls map={map}>
       <Canvas  shadows
        >
-        <OrbitControls/>
+        {/* <OrbitControls/> */}
         <KeyImage/>
         <Lights />
         <Physics debug={false} >
@@ -54,12 +54,12 @@ const Solutions= () => {
         // mode="FixedCamera" 
         
         // debug
-                            capsuleHalfHeight={0.5}
-                            floatingDis={0.2}
+                            capsuleHalfHeight={1}
+                            floatingDis={2}
                             camInitDis={-3}
                             camMaxDis={-4}
                             maxVelLimit={5} 
-                            position={[0, 3.8, 10]}
+                            position={[0, 4, 10]}
                         >
                <SphereRobot/>
              

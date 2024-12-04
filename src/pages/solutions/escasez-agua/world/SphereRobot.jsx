@@ -3,7 +3,7 @@ import { useRef} from "react";
 
 export default function SphereRobot(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/models-3d/Robot2.glb')
+  const { nodes, materials, animations } = useGLTF('/models-3d/Robot.glb')
   const { actions } = useAnimations(animations, group)
 
   return (
@@ -92,4 +92,4 @@ export default function SphereRobot(props) {
   )
 }
 
-useGLTF.preload('/models-3d/Robot2.glb')
+useGLTF.preload('/models-3d/Robot.glb')
