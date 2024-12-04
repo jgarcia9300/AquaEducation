@@ -6,8 +6,7 @@ import Controls from './controls/Controls';
 import Staging from './staging/Staging';
 import Iguana from './world/Iguana';
 import { Physics } from "@react-three/rapier";
-// import { Physics } from '@react-three/rapier';
-
+import { Perf } from 'r3f-perf';
 
 
 const WaterScarcity= () => {
@@ -19,6 +18,7 @@ const WaterScarcity= () => {
   return (
     // <KeyboardControls map={map}>
       <Canvas  shadows camera={cameraSettings}>
+        {/* <Perf/> */}
         <Controls />
         <Lights />
         <Physics debug={false}>

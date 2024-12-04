@@ -1,4 +1,4 @@
-import {Text, Plane} from '@react-three/drei'
+import {Text, Plane, Float} from '@react-three/drei'
 import { Texto3D } from "../../../components/models/text3d/Texto3D-Desierto";
 import { Button3D } from "../../../components/models/button3d/Button3D-Desierto";
 import { useRef, useState, useCallback, } from "react";
@@ -24,7 +24,18 @@ const DesertElements = () => {
     const groupRef = useRef();
   return (
     <>
+    <Float
+      speed={5}
+      rotationIntensity={0.5}
+      floatIntensity={0.1}
+      floatingRange={[1, 0.5]}
+    >
+
       <Texto3D text={`ESCASEZ  DEL AGUA`} />
+
+
+    </Float>
+
       <Button3D text={buttonState} onClick={handleClick} />
       <group ref={groupRef} visible={isVisible}>
         <Plane args={[20, 8]} position={[0, -1.5, -0.1]}>
