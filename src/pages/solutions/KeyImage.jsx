@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber";
 const KeyImage = () => {
   return (
     <Billboard
-      position={[0, 4, 8]} // Posición en el espacio 3D
+      position={[0, 7, 8]} // Posición en el espacio 3D
       follow={false} // Asegura que siempre mire a la cámara
       lockX={false} // Permite que rote en X si es necesario
       lockY={false} // Permite que rote en Y si es necesario

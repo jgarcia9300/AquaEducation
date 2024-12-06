@@ -3,6 +3,7 @@ import { Texto3D } from "../../../../components/models/text3d/Texto3D-Desierto";
 import { Button3D } from "../../../../components/models/button3d/Button3D-Desierto";
 import { useRef, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { DoubleSide } from "three";
 
 const DesertElements = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,7 +25,7 @@ const DesertElements = () => {
   const groupRef = useRef();
   return (
     <>
-      <Texto3D text={`SOLUCIONES`} />
+      <Texto3D text={`SOLUCIONES`} position={[-4, 16, 0]} />
       <Button3D text={buttonState} onClick={handleClick} />
       <group ref={groupRef} visible={isVisible}>
         <Plane args={[20, 8]} position={[0, -1.5, -0.1]}>
@@ -33,6 +34,7 @@ const DesertElements = () => {
             color="white"
             opacity={0}
             transparent
+  
           />
         </Plane>
         <Text
@@ -46,7 +48,7 @@ const DesertElements = () => {
           maxWidth={16}
         >
    Para abordar la escasez de agua, es crucial implementar una combinación de estrategias sostenibles que incluyan la mejora en la gestión de los recursos hídricos y el fomento del uso eficiente en los sectores doméstico, agrícola e industrial. La reforestación y conservación de cuencas hidrográficas ayudan a preservar fuentes de agua dulce. Además, la educación y sensibilización pública son clave para promover hábitos responsables y garantizar un acceso equitativo a este recurso vital.
-          <meshStandardMaterial attach="material" color="white" />
+          <meshStandardMaterial attach="material" color="white"      side={DoubleSide} />
         </Text>
       </group>
     </>

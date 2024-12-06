@@ -8,6 +8,7 @@ import { ScrollControls } from '@react-three/drei';
 import Text from './2d-elements/Text';
 
 
+
 const River= () => {
   const cameraSettings = {
     position: [0, 15, 16],
@@ -27,6 +28,7 @@ const River= () => {
         <WetLand />
         </ScrollControls>
         {/* </Physics> */}
+
       </Canvas>
     {/* /* // </KeyboardControls> */ }
     </>

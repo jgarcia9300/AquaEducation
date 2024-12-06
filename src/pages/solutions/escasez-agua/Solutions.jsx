@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
-import { KeyboardControls, Loader, OrbitControls } from '@react-three/drei';
-import React from 'react'
+import { KeyboardControls, Loader, OrbitControls, PositionalAudio } from '@react-three/drei';
+import React, { useCallback, useRef } from 'react'
 import Desert from './world/Desert';
 import Lights from './lights/Lights';
 import Controls from './controls/Controls';
@@ -16,6 +16,9 @@ import SphereRobot from './world/SphereRobot';
 import KeyImage from '../KeyImage';
 import Iguana from '../../escasez-agua/world/Iguana';
 import { Perf } from 'r3f-perf';
+import Video from './world/Video';
+import { RotationOps } from '@dimforge/rapier3d-compat';
+
 
 
 
@@ -30,6 +33,14 @@ const Solutions= () => {
     backgroundColor: 'lightblue', // Change this to your desired color
     // Add other styles if needed
   };
+
+  const audioRef = useRef();
+
+  const handleAudio = useCallback((e) => {
+    audioRef.current.play();
+    audioRef.current.setVolume(10);
+
+  }, [])
 
   // const animationSet = {
   //   idle: 'CharacterArmature|Idle',
@@ -48,7 +59,7 @@ const Solutions= () => {
   return (
     
     <KeyboardControls map={map}>
-      <Canvas  shadows
+      <Canvas  shadows onClick={handleAudio}
        >
         <Suspense fallback={null}>
         {/* <Perf /> */}
@@ -61,20 +72,29 @@ const Solutions= () => {
         // mode="FixedCamera" 
         
         // debug
-                            capsuleHalfHeight={1}
-                            floatingDis={2}
+                            capsuleHalfHeight={0.5}
+                            floatingDis={0.5}
                             camInitDis={-3}
                             camMaxDis={-4}
                             maxVelLimit={5} 
-                            position={[0, 4, 10]}
+                            position={[0, 6.5, 10]}
                         >
-               <SphereRobot/>
+               <SphereRobot scale={0.5}/>
              
         </Ecctrl>
         <Staging/>
         <Desert />
-        <Iguana position={[10, 0, 8]}/>
+        {/* <Iguana position={[10, 0, 8]}/> */}
         </Physics>
+        <Video
+        name="screen" 
+        position={[-20, 10, 10]}
+        scale={10}
+        rotation={[0, Math.PI/2, 0]} // Rotate 45 degrees around the x-axis
+        />
+        <group position={[-20, 10,10]}> 
+         <PositionalAudio ref={audioRef} loop url="/sounds/desert-sound.mp3" distance={4}/ >
+        </group>
         </Suspense>
       </Canvas>
       <Loader containerStyles={customContainerStyles} />
